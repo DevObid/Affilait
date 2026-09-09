@@ -71,7 +71,7 @@
    ========================================================= */
 *, *::before, *::after { box-sizing: border-box; }
 
-html { scroll-behavior: smooth; }
+html { scroll-behavior: smooth; overflow-x: hidden; }
 
 body {
   margin: 0;
@@ -80,6 +80,7 @@ body {
   color: var(--text-dark);
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
 }
 
 img, svg { display: block; max-width: 100%; }
@@ -527,6 +528,8 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 
 /* Signup card */
 .signup-card {
+  width: 100%;
+  max-width: 100%;
   background: #fff;
   color: var(--text-dark);
   border-radius: var(--radius-lg);
@@ -1495,7 +1498,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 .opt-name {
   font-weight: 700;
   color: var(--text-light);
-  white-space: nowrap;
+  white-space: normal;
 }
 
 .opt-price {
@@ -1520,16 +1523,20 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 
 .opt-badge {
   display: inline-block;
-  margin-left: 10px;
+  margin-left: 0;
+  margin-top: 8px;
+  width: fit-content;
+  max-width: 100%;
   font-size: 9px;
   font-weight: 800;
   text-transform: uppercase;
-  letter-spacing: 0.04em;
-  padding: 3px 8px;
+  letter-spacing: 0.03em;
+  padding: 4px 10px;
   border-radius: var(--radius-pill);
-  background: rgba(94, 234, 212, 0.06);
+  background: rgba(94, 234, 212, 0.1);
+  border: 1px solid rgba(94, 234, 212, 0.25);
   color: var(--accent);
-  white-space: normal;
+  white-space: nowrap;
 }
 
 .options-fine {
@@ -1673,30 +1680,90 @@ footer {
 .footer-links a { font-size: var(--fs-sm); color: var(--text-muted-light); }
 .footer-links a:hover { color: var(--text-light); }
 
-.disclosure {
+.footer-legal {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  padding: var(--space-6) 0;
+  border-top: 1px solid var(--border-dark);
+  margin-bottom: var(--space-5);
+}
+
+.legal-item {
+  background: rgba(238, 242, 249, 0.03);
+  border: 1px solid var(--border-dark);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+}
+
+.legal-question {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--space-4) var(--space-5);
+  font-weight: 700;
+  font-size: var(--fs-sm);
+  text-align: left;
+  color: var(--text-light);
+  cursor: pointer;
+}
+
+.legal-question .icon { transition: transform var(--transition); flex-shrink: 0; margin-left: var(--space-4); color: var(--text-muted-light); }
+
+.legal-item[open] .legal-question .icon { transform: rotate(45deg); }
+
+.legal-answer {
+  padding: 0 var(--space-5) var(--space-5);
+}
+
+.legal-answer p {
   font-size: var(--fs-xs);
   color: var(--text-muted-light);
-  max-width: 780px;
-  margin: 0 auto var(--space-4);
-  text-align: center;
+  margin-bottom: var(--space-2);
   line-height: 1.6;
 }
 
-.footer-bottom { text-align: center; font-size: var(--fs-xs); color: var(--text-muted-light); }
+.legal-answer p:last-child { margin-bottom: 0; }
 
-/* Sticky mobile CTA */
-.sticky-mobile-cta {
-  display: none;
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  z-index: 200;
-  padding: var(--space-3) var(--space-4);
-  background: rgba(6,9,17,0.92);
-  backdrop-filter: blur(12px);
-  border-top: 1px solid var(--border-dark);
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  margin-top: var(--space-3);
 }
+
+.contact-form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-3);
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 12px 14px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border-dark);
+  background: rgba(238, 242, 249, 0.04);
+  color: var(--text-light);
+  font-family: var(--font-body);
+  font-size: var(--fs-sm);
+  resize: vertical;
+}
+
+.contact-form input::placeholder,
+.contact-form textarea::placeholder { color: var(--text-muted-light); }
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  outline: none;
+  border-color: var(--cta);
+}
+
+.contact-form .btn { align-self: flex-start; }
+
+.footer-bottom { text-align: center; font-size: var(--fs-xs); color: var(--text-muted-light); }
 
 /* =========================================================
    Animations
@@ -1713,9 +1780,9 @@ footer {
    Responsive
    ========================================================= */
 @media (max-width: 1024px) {
-  .hero .container { grid-template-columns: 1fr; }
+  .hero .container { grid-template-columns: 1fr; justify-items: stretch; }
   .hero-visual { height: 380px; margin-top: var(--space-6); }
-  .signup-card { margin-top: var(--space-6); }
+  .signup-card { margin-top: var(--space-6); margin-left: 0; margin-right: 0; }
   .gift-section-wrap { grid-template-columns: 1fr; }
   .steps-row { grid-template-columns: 1fr; }
   .problem-grid { grid-template-columns: repeat(2, 1fr); }
@@ -1739,16 +1806,42 @@ footer {
 @media (max-width: 768px) {
   :root { --fs-4xl: 2.4rem; --fs-3xl: 1.9rem; --fs-2xl: 1.6rem; }
   .highlight-strip { grid-template-columns: 1fr; }
-  .nav-countdown { display: none; }
-  .nav-cta .btn-cta { display: none; }
+  .navbar .container {
+    flex-wrap: wrap;
+    height: auto;
+    padding: var(--space-3) 0;
+    row-gap: var(--space-3);
+  }
+  .brand { order: 1; }
+  .nav-cta { order: 2; }
+  .nav-cta .btn-cta { display: inline-flex; padding: 10px 16px; font-size: var(--fs-xs); }
+  .nav-countdown {
+    order: 3;
+    width: 100%;
+    justify-content: center;
+    flex-wrap: wrap;
+    row-gap: 4px;
+    padding: 8px 12px;
+    text-align: center;
+  }
+  .countdown-label { width: 100%; text-align: center; }
+  .countdown-date { border-left: none; padding-left: 0; width: 100%; text-align: center; }
   .problem-grid { grid-template-columns: 1fr; }
   .pricing-grid { grid-template-columns: 1fr; }
   .price-card.featured { grid-column: span 1; }
   .workflow-track { grid-template-columns: 1fr 1fr; }
   .launch-meta { flex-direction: column; align-items: stretch; }
-  .sticky-mobile-cta { display: block; }
-  body { padding-bottom: 76px; }
   .section { padding: var(--space-8) 0; }
   .signup-form .form-row { grid-template-columns: 1fr; }
+  .contact-form-row { grid-template-columns: 1fr; }
   .panel-fields { grid-template-columns: 1fr; }
+  .signup-card { padding: var(--space-5); }
+  .signup-date { flex-wrap: wrap; }
+  .launch-cta { padding: var(--space-6) var(--space-4); }
+  .btn-lg {
+    max-width: 100%;
+    white-space: normal;
+    text-align: center;
+    padding: 16px 20px;
+  }
 }
