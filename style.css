@@ -223,7 +223,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 
 .btn-outline-dark:hover { background: rgba(15, 23, 42, 0.04); transform: translateY(-2px); }
 
-.btn-block { width: 100%; }
+.btn-block { width: 100%; white-space: normal; text-align: center; }
 
 .btn-lg { padding: 16px 34px; font-size: var(--fs-base); }
 
@@ -381,6 +381,8 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   gap: var(--space-8);
   align-items: center;
 }
+
+.hero .container > * { min-width: 0; }
 
 .launch-badge {
   display: inline-flex;
