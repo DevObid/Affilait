@@ -834,6 +834,10 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 .already-note a { color: var(--cta); font-weight: 700; }
 .already-note a:hover { text-decoration: underline; }
 
+.section-dark .gift-lead { color: var(--text-muted-light); }
+.section-dark .arrow-list li { color: var(--text-light); }
+.section-dark .already-note { color: var(--text-muted-light); }
+
 .note-box {
   display: inline-block;
   font-size: var(--fs-xs);
@@ -953,24 +957,49 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 
 .community-idea p { font-size: var(--fs-sm); color: var(--text-muted-light); }
 
-.panel-disclaimer { font-size: 11px; color: var(--text-muted-light); margin-top: var(--space-4); }
+.panel-disclaimer { font-size: var(--fs-sm); color: var(--text-muted-light); margin-top: var(--space-4); }
 
 /* =========================================================
    Register Steps
    ========================================================= */
 .steps-row {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   gap: var(--space-5);
   margin-bottom: var(--space-5);
 }
 
+.step-options {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  margin-bottom: var(--space-4);
+}
+
+.step-options li {
+  font-size: var(--fs-xs);
+  line-height: 1.4;
+}
+
+.step-options li strong {
+  display: block;
+  color: var(--cta);
+  font-weight: 800;
+}
+
+.step-options li a { text-decoration: none; }
+.step-options li a:hover strong { text-decoration: underline; }
+
+.step-options li span { color: var(--text-muted-dark); }
+.section-dark .step-options li span { color: var(--text-muted-light); }
+
 .step-card {
-  background: rgba(255,255,255,0.03);
-  border: 1px solid var(--border-dark);
+  background: #fff;
+  border: 1px solid var(--border-light);
   border-top: 3px solid var(--cta);
   border-radius: var(--radius-md);
   padding: var(--space-5);
+  box-shadow: var(--shadow-soft);
   transition: transform var(--transition);
 }
 
@@ -986,13 +1015,18 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   margin-bottom: var(--space-3);
 }
 
-.step-card h3 { font-size: var(--fs-md); font-weight: 700; color: var(--text-light); margin-bottom: var(--space-2); }
-.step-card p { font-size: var(--fs-sm); color: var(--text-muted-light); margin-bottom: var(--space-4); }
+.step-card h3 { font-size: var(--fs-md); font-weight: 700; color: var(--text-dark); margin-bottom: var(--space-2); }
+.step-card p { font-size: var(--fs-sm); color: var(--text-muted-dark); margin-bottom: var(--space-4); }
 
-.step-link { font-size: var(--fs-sm); font-weight: 700; color: var(--accent); }
+.step-link { font-size: var(--fs-sm); font-weight: 700; color: var(--cta); }
 .step-link:hover { text-decoration: underline; }
 
-.steps-fine { font-size: var(--fs-xs); color: var(--text-muted-light); text-align: center; }
+.steps-fine { font-size: var(--fs-xs); color: var(--text-muted-dark); text-align: center; }
+
+.section-dark .step-card { background: rgba(255,255,255,0.03); border-color: var(--border-dark); box-shadow: none; }
+.section-dark .step-card h3 { color: var(--text-light); }
+.section-dark .step-card p { color: var(--text-muted-light); }
+.section-dark .steps-fine { color: var(--text-muted-light); }
 
 .problem-grid, .solution-grid {
   display: grid;
@@ -1252,8 +1286,10 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   box-shadow: var(--shadow-soft);
 }
 
-.workflow-step h4 { font-size: var(--fs-sm); font-weight: 700; margin-bottom: 6px; }
+.workflow-step h4 { font-size: var(--fs-sm); font-weight: 700; margin-bottom: 6px; color: var(--text-dark); }
 .workflow-step p { font-size: var(--fs-xs); color: var(--text-muted-dark); }
+.section-dark .workflow-step h4 { color: var(--text-light); }
+.section-dark .workflow-step p { color: var(--text-muted-light); }
 
 /* =========================================================
    AI Demonstration section
@@ -1317,17 +1353,18 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 }
 
 .audience-card {
-  background: var(--bg-dark-2);
-  border: 1px solid var(--border-dark);
+  background: #fff;
+  border: 1px solid var(--border-light);
   border-radius: var(--radius-lg);
   padding: var(--space-6);
+  box-shadow: var(--shadow-soft);
 }
 
-.audience-card h3 { font-size: var(--fs-lg); font-weight: 700; margin-bottom: var(--space-3); color: var(--text-light); }
+.audience-card h3 { font-size: var(--fs-lg); font-weight: 700; margin-bottom: var(--space-3); color: var(--text-dark); }
 .audience-card ul { display: flex; flex-direction: column; gap: var(--space-3); }
 .audience-card li {
   font-size: var(--fs-sm);
-  color: var(--text-muted-light);
+  color: var(--text-muted-dark);
   padding-left: 26px;
   position: relative;
 }
@@ -1441,6 +1478,37 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   gap: var(--space-4);
   border-left: 1px solid var(--border-dark);
   padding-left: var(--space-8);
+}
+
+.commercial-body p {
+  font-size: var(--fs-sm);
+  color: var(--text-muted-light);
+  line-height: 1.6;
+  margin-bottom: var(--space-4);
+}
+
+.commercial-body p:last-child { margin-bottom: 0; }
+.commercial-body p strong { color: var(--text-light); }
+
+.commercial-body h4 {
+  font-size: var(--fs-base);
+  font-weight: 800;
+  color: var(--text-light);
+  margin-bottom: var(--space-3);
+}
+
+.commercial-body ul {
+  margin-bottom: var(--space-5);
+}
+
+.commercial-body ul:last-child { margin-bottom: 0; }
+
+.text-cta { color: var(--cta); font-weight: 700; }
+
+.commercial-fine {
+  font-size: var(--fs-xs);
+  color: var(--text-muted-light);
+  margin: calc(var(--space-2) * -1) 0 0;
 }
 
 .bundle-savings .old-total { font-size: var(--fs-md); color: var(--text-muted-light); text-decoration: line-through; }
