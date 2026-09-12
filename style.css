@@ -428,6 +428,14 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   color: transparent;
 }
 
+.hero-highlight {
+  font-size: var(--fs-md);
+  font-weight: 700;
+  color: var(--cta);
+  max-width: 540px;
+  margin-bottom: var(--space-2);
+}
+
 .hero-sub {
   font-size: var(--fs-md);
   color: var(--text-muted-light);
@@ -573,6 +581,69 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 
 .signup-card h3 { font-size: var(--fs-md); font-weight: 800; margin-bottom: var(--space-2); }
 .signup-sub { font-size: var(--fs-sm); color: var(--text-muted-dark); margin-bottom: var(--space-5); }
+
+.coupon-badge {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  flex-wrap: wrap;
+  padding: var(--space-3) var(--space-4);
+  margin-bottom: var(--space-4);
+  border: 2px dashed var(--cta);
+  border-radius: var(--radius-sm);
+  background: rgba(255, 90, 60, 0.06);
+}
+
+.coupon-label {
+  font-size: var(--fs-xs);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--text-muted-dark);
+}
+
+.coupon-code {
+  font-size: var(--fs-md);
+  font-weight: 900;
+  letter-spacing: 0.05em;
+  padding: 4px 10px;
+  border-radius: 6px;
+  background: var(--gradient-brand);
+  color: #04121a;
+}
+
+.coupon-desc {
+  font-size: var(--fs-sm);
+  font-weight: 700;
+  color: var(--cta);
+}
+
+.section-dark .coupon-label { color: var(--text-muted-light); }
+
+.hero-coupon-wrap {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: var(--space-3);
+  margin-top: var(--space-8);
+}
+
+.hero-coupon-wrap .coupon-badge {
+  background: rgba(255, 90, 60, 0.1);
+  justify-content: center;
+}
+
+.hero-coupon-note {
+  width: 100%;
+  font-size: var(--fs-md);
+  font-weight: 600;
+  color: var(--text-light);
+  text-align: center;
+  margin-top: var(--space-2);
+}
 
 .signup-form { display: flex; flex-direction: column; gap: var(--space-4); margin-bottom: var(--space-4); }
 
@@ -1018,7 +1089,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 .step-card h3 { font-size: var(--fs-md); font-weight: 700; color: var(--text-dark); margin-bottom: var(--space-2); }
 .step-card p { font-size: var(--fs-sm); color: var(--text-muted-dark); margin-bottom: var(--space-4); }
 
-.step-link { font-size: var(--fs-sm); font-weight: 700; color: var(--cta); }
+.step-link { display: block; font-size: var(--fs-sm); font-weight: 700; color: var(--cta); margin-top: var(--space-2); }
 .step-link:hover { text-decoration: underline; }
 
 .steps-fine { font-size: var(--fs-xs); color: var(--text-muted-dark); text-align: center; }
