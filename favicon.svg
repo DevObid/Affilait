@@ -1,12 +1,76 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 410" width="100%" height="100%">
   <defs>
-    <linearGradient id="g" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#5eead4"/>
-      <stop offset="55%" stop-color="#7c9dff"/>
-      <stop offset="100%" stop-color="#a78bfa"/>
+    <!-- Background Gradient -->
+    <linearGradient id="bgGlow" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#181e2b"/>
+      <stop offset="100%" stop-color="#0e111a"/>
+    </linearGradient>
+
+    <!-- Subtle Center Radial Glow -->
+    <radialGradient id="centerGlow" cx="50%" cy="37%" r="40%">
+      <stop offset="0%" stop-color="#0088ff" stop-opacity="0.2"/>
+      <stop offset="100%" stop-color="#0088ff" stop-opacity="0"/>
+    </radialGradient>
+
+    <!-- Hexagon Border Gradient -->
+    <linearGradient id="hexGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00d8ff"/>
+      <stop offset="45%" stop-color="#0088ff"/>
+      <stop offset="100%" stop-color="#0044cc"/>
+    </linearGradient>
+
+    <!-- Dashed Ring Gradient -->
+    <linearGradient id="dashGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00bcff" stop-opacity="0.9"/>
+      <stop offset="100%" stop-color="#0055d4" stop-opacity="0.5"/>
+    </linearGradient>
+
+    <!-- Center Circle Gradient -->
+    <linearGradient id="circleGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00c8ff"/>
+      <stop offset="100%" stop-color="#0055ff"/>
+    </linearGradient>
+
+    <!-- Text Hub Gradient -->
+    <linearGradient id="hubTextGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#00d2ff"/>
+      <stop offset="100%" stop-color="#00a2ff"/>
     </linearGradient>
   </defs>
-  <rect width="64" height="64" rx="16" fill="#060911"/>
-  <rect x="10" y="10" width="44" height="44" rx="12" fill="url(#g)"/>
-  <text x="32" y="41" font-family="Arial, sans-serif" font-size="22" font-weight="800" fill="#04121a" text-anchor="middle">iG</text>
+
+  <!-- Canvas Base (Rounded Squircle App Icon) -->
+  <rect width="500" height="410" rx="90" fill="url(#bgGlow)"/>
+
+  <!-- Radial Glow Behind Icon -->
+  <circle cx="250" cy="185" r="160" fill="url(#centerGlow)"/>
+
+  <!-- Outer Dashed Radar Circle -->
+  <circle cx="250" cy="185" r="102" 
+          fill="none" 
+          stroke="url(#dashGradient)" 
+          stroke-width="6.5" 
+          stroke-dasharray="8.5 6.5" 
+          transform="rotate(-10 250 185)"/>
+
+  <!-- Main Outer Hexagon -->
+  <polygon points="250,97 326,141 326,229 250,273 174,229 174,141" 
+           fill="#111522" 
+           stroke="url(#hexGradient)" 
+           stroke-width="11" 
+           stroke-linejoin="round"/>
+
+  <!-- Center Target Disc -->
+  <circle cx="250" cy="185" r="28" fill="url(#circleGradient)"/>
+
+  <!-- Target Center Pupil / Ring -->
+  <circle cx="250" cy="185" r="5.5" fill="none" stroke="#ffffff" stroke-width="3"/>
+
+  <!-- Pointer / Scope Needle -->
+  <line x1="253" y1="182" x2="297" y2="138" stroke="#00f0ff" stroke-width="4.5" stroke-linecap="round"/>
+
+  <!-- Brand Title: AppScoutHub -->
+  <text x="250" y="362" text-anchor="middle" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="43" font-weight="800" letter-spacing="-0.5px">
+    <tspan fill="#ffffff">AppScout</tspan><tspan fill="url(#hubTextGradient)">Hub</tspan>
+  </text>
+
 </svg>

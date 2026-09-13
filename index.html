@@ -24,13 +24,12 @@
 <header class="navbar">
   <div class="container">
     <a href="#top" class="brand" aria-label="AppScoutHub home">
-      <span class="brand-mark">AS</span>
-      AppScoutHub
+      <img src="favicon.svg" alt="AppScoutHub" class="brand-logo">
     </a>
     <div class="nav-countdown" aria-label="Countdown to live launch">
       <span class="countdown-label">The live iGloo build starts in</span>
       <span class="countdown-time" id="countdownTime">--d --h --m --s</span>
-      <span class="countdown-date">Sunday 13 September · 3 PM ET</span>
+      <span class="countdown-date">Sunday 13 September · 7 PM ET</span>
     </div>
     <div class="nav-cta">
       <a class="btn btn-cta" href="https://jvz9.com/c/3361273/449583/">Reserve My Seat</a>
@@ -58,7 +57,7 @@
         <div class="date-box"><span class="date-month">Sep 2026</span><span class="date-day">13</span></div>
         <div class="date-info">
           <span class="date-label">Sunday · Free Live Webinar</span>
-          <span class="date-time">3 PM ET</span>
+          <span class="date-time">7 PM ET</span>
         </div>
       </div>
       <h3>Your next opportunity starts here.</h3>
@@ -354,7 +353,7 @@
       <p>The Local Lead Finder software is only made available to attendees who join the live launch webinar. Registration is free and doesn't obligate you to buy anything.</p>
       <div class="launch-meta">
         <div class="meta-item"><div class="label">Date</div><div class="value">Sunday, 13 September 2026</div></div>
-        <div class="meta-item"><div class="label">Time</div><div class="value">3 PM ET</div></div>
+        <div class="meta-item"><div class="label">Time</div><div class="value">7 PM ET</div></div>
         <div class="meta-item"><div class="label">Format</div><div class="value">Live Online Webinar</div></div>
       </div>
       <a class="btn btn-cta btn-lg" href="https://jvz9.com/c/3361273/449583/">Register + Get Free Lead Finder →</a>
@@ -436,7 +435,7 @@
           <summary class="faq-question">When is the live launch?
             <span class="icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span>
           </summary>
-          <div class="faq-answer">Sunday 13 September · 3 PM ET. Register for the viewing link and reminders. The free Lead Finder is available after verified account setup whether or not you attend live.</div>
+          <div class="faq-answer">Sunday 13 September · 7 PM ET. Register for the viewing link and reminders. The free Lead Finder is available after verified account setup whether or not you attend live.</div>
         </details>
         <details class="faq-item">
           <summary class="faq-question">Does iGloo guarantee clients or sales?
@@ -455,7 +454,7 @@
 <footer>
   <div class="container">
     <div class="footer-top">
-      <a href="#top" class="brand"><span class="brand-mark">AS</span> AppScoutHub</a>
+      <a href="#top" class="brand"><img src="favicon.svg" alt="AppScoutHub" class="brand-logo"></a>
     </div>
     <div class="footer-legal">
       <details class="legal-item">
@@ -536,7 +535,7 @@
 
   const countdownEl = document.getElementById('countdownTime');
   if (countdownEl) {
-    const launchDate = new Date('2026-09-13T15:00:00-04:00').getTime();
+    const launchDate = new Date('2026-09-13T19:00:00-04:00').getTime();
     const updateCountdown = () => {
       const now = Date.now();
       const diff = launchDate - now;

@@ -296,17 +296,11 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   color: var(--text-light);
 }
 
-.brand-mark {
-  width: 38px;
-  height: 34px;
-  border-radius: 10px;
-  background: var(--gradient-brand);
-  display: grid;
-  place-items: center;
-  color: #04121a;
-  font-weight: 900;
-  font-size: var(--fs-sm);
-  letter-spacing: -0.02em;
+.brand-logo {
+  height: 64px;
+  width: auto;
+  border-radius: 8px;
+  display: block;
 }
 
 .nav-cta { display: flex; align-items: center; gap: var(--space-4); }
