@@ -1,0 +1,21 @@
+name = "aff-tracking-worker"
+main = "src/index.js"
+compatibility_date = "2024-11-01"
+
+# Bind a KV namespace for storing tracking_id -> li_fat_id records.
+# Replace the "id" value below with the ID printed by:
+#   wrangler kv namespace create TRACKING_KV
+[[kv_namespaces]]
+binding = "TRACKING_KV"
+id = "52ae979d55f94694bb0a18f370010a9e"
+
+# Optional: uncomment and set once you point a route/domain at this Worker.
+# [[routes]]
+# pattern = "appscouthub.com/api/*"
+# zone_name = "appscouthub.com"
+
+[vars]
+# Restrict CORS to your landing page origin once deployed.
+ALLOWED_ORIGIN = "https://appscouthub.com"
+# How long a tracking_id -> li_fat_id record stays in KV before it expires.
+TRACKING_TTL_SECONDS = "2592000"

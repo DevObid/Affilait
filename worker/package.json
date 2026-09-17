@@ -1,0 +1,15 @@
+{
+  "name": "aff-tracking-worker",
+  "private": true,
+  "version": "1.0.0",
+  "scripts": {
+    "dev": "wrangler dev",
+    "deploy": "wrangler deploy",
+    "login": "wrangler login",
+    "login:firefox": "BROWSER=firefox wrangler login",
+    "kv:create": "wrangler kv namespace create TRACKING_KV"
+  },
+  "devDependencies": {
+    "wrangler": "^4.132.0"
+  }
+}
